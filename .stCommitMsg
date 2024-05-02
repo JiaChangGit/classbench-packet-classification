@@ -1,0 +1,15 @@
+#-type:
+#fix:
+#style:
+#docs:
+#feat:
+#test:
+#chore:
+
+# - scope: 影響範圍
+#(Scope):
+
+#{body}:
+
+# - foot: 填寫任務編號
+#{foot}:
