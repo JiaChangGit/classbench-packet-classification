@@ -11,6 +11,8 @@ Git commit message template with .stCommitMsg
 
 ## How to Use
 
+#### Notice your file path
+
 Old version:
 
 make all
@@ -23,7 +25,7 @@ New version of classbench, installed environment (Ruby):
 
 make
 
-sh run_forNewVersion.sh acl1 1000
+sh run.sh acl1 1000
 
 (The new version of classbench is too slow, and it takes too long to generate a 100K data set, so I used 20K to check it can run.)
 
