@@ -28,8 +28,8 @@ FlagList::~FlagList() {
       first[i] = temp;
     }
   }
-  delete (first);
-  delete (last);
+  delete[] first;
+  delete[] last;
 }
 
 void FlagList::choose(float p, int prot, unsigned *flags,

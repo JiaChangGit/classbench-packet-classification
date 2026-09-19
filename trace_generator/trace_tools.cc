@@ -55,8 +55,9 @@ int header_gen(int d, FilterList* filters, FILE* fp, float a, float b,
   // Print headers
   headers->print(fp);
 
-  delete (new_hdr);
+  delete[] new_hdr;
   delete (headers);
+  delete filts;
 
   return num_headers;
 }

@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
   int c = 0;
   // Check for switches
   while (--argc > 0 && (*++argv)[0] == '-') {
-    while (c = *++argv[0]) {
+    while ((c = *++argv[0]) != '\0') {
       switch (c) {
         case 'r':
           random = 1;

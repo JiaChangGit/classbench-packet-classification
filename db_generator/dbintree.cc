@@ -29,10 +29,10 @@ dbintree::dbintree() {
 }
 
 dbintree::~dbintree() {
-  delete (skew);
-  delete (corr);
-  delete (p1child);
-  delete (p2child);
+  delete[] skew;
+  delete[] corr;
+  delete[] p1child;
+  delete[] p2child;
   // call recursive node destructor
   if (root != NULL) delete_node(root);
 }

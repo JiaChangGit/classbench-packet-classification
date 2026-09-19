@@ -27,11 +27,11 @@ flist::flist(int d1, int N1) {
 
 flist::~flist() {
   for (int i = 0; i < Nf; i++){
-    delete(lowf[i]);
-    delete(highf[i]);
+    delete[] lowf[i];
+    delete[] highf[i];
   }
-  delete(lowf);
-  delete(highf);
+  delete[] lowf;
+  delete[] highf;
 }
 
 int flist::d() { return df; }

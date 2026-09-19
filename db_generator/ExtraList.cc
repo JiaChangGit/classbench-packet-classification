@@ -13,11 +13,13 @@
 #include "stdinc.h"
 
 ExtraList::ExtraList(int P1) {
+  N = 0;
   P = P1;
   first = last = NULL;
   for (int i = 1; i <= P; i++) {
     // Create header list
     struct ExtraListHeader *temp = new struct ExtraListHeader;
+    temp->field = NULL;
     temp->next = NULL;
     temp->prev = last;
     if (i == 1) {
@@ -37,14 +39,15 @@ ExtraList::~ExtraList() {
     // Get first header item
     temp = first;
     // For each field
-    for (int j = 0; j < N; j++) {
+    for (int j = 0; temp->field != NULL && j < N; j++) {
       tempI = temp->field[j];
       // Delete list of values
-      delete (tempI->value);
-      delete (tempI->prob);
+      delete[] tempI->value;
+      delete[] tempI->prob;
+      delete tempI;
     }
     first = first->next;
-    delete (temp->field);
+    delete[] temp->field;
     delete (temp);
   }
 }
