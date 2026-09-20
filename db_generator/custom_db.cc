@@ -226,7 +226,7 @@ int custom_db_gen(int num_filters, FilterList *filters, FILE *fp_in,
   // printf(" \tdone\n");
 
   // Delete data structures
-  delete (temp_filters);
+  delete[] temp_filters;
   // printf("Done with custom_db\n");
 
   return filter_cnt;

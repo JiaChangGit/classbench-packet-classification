@@ -28,8 +28,8 @@ inline double min(double x, double y) { return x < y ? x : y; }
 inline int abs(int x) { return x < 0 ? -x : x; }
 inline bit isdigit(int c) { return (c >= '0') && (c <= '9'); }
 
-inline void warning(char* p) { fprintf(stderr, "Warning:%s \n", p); }
-inline void fatal(char* string) {
+inline void warning(const char* p) { fprintf(stderr, "Warning:%s \n", p); }
+inline void fatal(const char* string) {
   fprintf(stderr, "Fatal:%s\n", string);
   exit(1);
 }

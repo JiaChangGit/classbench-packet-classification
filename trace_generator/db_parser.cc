@@ -16,7 +16,7 @@
 int read_filters(FilterList *filters, FILE *fp_in){
   int line_matches = 0;
   int matches = 0;
-  char *line_buffer = new char[500];
+  char line_buffer[500];
   char string_buffers[20][20];
   int buffer_size = 500;
   int temp_addr[4];
@@ -37,8 +37,7 @@ int read_filters(FilterList *filters, FILE *fp_in){
  
     
     // Read in line
-    line_buffer = fgets(line_buffer, buffer_size, fp_in);
-    if (line_buffer == NULL) return d;
+    if (fgets(line_buffer, buffer_size, fp_in) == NULL) return d;
     
     // Parse line into strings
     line_matches = sscanf(line_buffer, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s",
@@ -167,6 +166,5 @@ int read_filters(FilterList *filters, FILE *fp_in){
       i--;
     }
   }
-  delete(line_buffer);
   return d;
 }

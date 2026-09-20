@@ -23,7 +23,7 @@ PortList::PortList(int N1) {
   }
 }
 
-PortList::~PortList() { delete ports; }
+PortList::~PortList() { delete[] ports; }
 
 void PortList::read(int t, FILE *fp) {
   int done = 0;

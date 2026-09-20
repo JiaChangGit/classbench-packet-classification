@@ -27,9 +27,9 @@ sbintree::sbintree() {
 }
 
 sbintree::~sbintree() {
-  delete (skew);
-  delete (p1child);
-  delete (p2child);
+  delete[] skew;
+  delete[] p1child;
+  delete[] p2child;
   // call recursive node destructor
   if (root != NULL) delete_node(root);
 }

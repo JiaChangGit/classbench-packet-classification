@@ -25,8 +25,8 @@ ProtList::ProtList() {
 }
 
 ProtList::~ProtList() {
-  for (int i = 0; i < 25; i++) delete protocols[i].pt_prob;
-  delete protocols;
+  for (int i = 0; i < 25; i++) delete[] protocols[i].pt_prob;
+  delete[] protocols;
 }
 
 void ProtList::read(FILE *fp) {

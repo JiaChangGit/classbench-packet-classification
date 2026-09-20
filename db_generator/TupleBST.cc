@@ -13,11 +13,12 @@ TupleBST::TupleBST() {
   root = NULL;
   N = 0;
   PtrIndex = 0;
+  ListOfFilterIndexPtrs = NULL;
 }
 
 TupleBST::~TupleBST() {
   if (root != NULL) cleanup(root);
-  delete(ListOfFilterIndexPtrs);
+  delete[] ListOfFilterIndexPtrs;
 }
 
 void TupleBST::cleanup(TupleBST_item* node){

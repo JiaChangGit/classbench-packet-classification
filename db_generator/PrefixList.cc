@@ -25,8 +25,8 @@ PrefixList::PrefixList() {
 }
 
 PrefixList::~PrefixList() {
-  for (int type = 0; type < 25; type++) delete prefixes[type];
-  delete prefixes;
+  for (int type = 0; type < 25; type++) delete[] prefixes[type];
+  delete[] prefixes;
 }
 
 void PrefixList::read(FILE *fp) {
@@ -136,13 +136,13 @@ void PrefixList::read_type(int type, FILE *fp) {
   int scomm_len = 500;
   while (done == 0) {
     fgets(scomm, scomm_len, fp);
-    // Read a line of the input
+    // One total-length pair followed by up to 33 source lengths (0 through 32).
     matches = sscanf(
         scomm,
         "%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%"
         "f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%"
         "f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%f\t%d,%"
-        "f\t%d,%f\t%d,%f\t%d,%f",
+        "f\t%d,%f\t%d,%f\t%d,%f\t%d,%f",
         &lens[0], &probs[0], &lens[1], &probs[1], &lens[2], &probs[2], &lens[3],
         &probs[3], &lens[4], &probs[4], &lens[5], &probs[5], &lens[6],
         &probs[6], &lens[7], &probs[7], &lens[8], &probs[8], &lens[9],
